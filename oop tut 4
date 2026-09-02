@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+class Complex
+{
+ int r, i;
+public:
+ void input()
+ {
+ cout << "Enter real part: ";
+ cin >> r;
+ cout << "Enter imaginary part: ";
+ cin >> i;
+ }
+ void show()
+ {
+ if (i >= 0)
+ cout << r << " + " << i << "i" << "\n";
+ else
+ cout << r << " - " << -i << "i" << "\n";
+ }
+ Complex add(Complex c)
+ {
+ Complex ans;
+ ans.r = r + c.r;
+ ans.i = i + c.i;
+ return ans;
+ }
+};
+int main()
+{
+ Complex c1, c2, c3, ans;
+ cout << "Enter first complex number:\n";
+ c1.input();
+ cout << "\nEnter second complex number:\n";
+ c2.input();
+
+ cout << "\nEnter third complex number:\n";
+ c3.input();
+
+ ans = c1.add(c2).add(c3);
+ cout << "\nAddition = ";
+ ans.show();
+
+ return 0;
+}
