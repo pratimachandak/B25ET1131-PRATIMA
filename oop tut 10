@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float salary;
+
+    cout << "Enter employee salary: ";
+    cin >> salary;
+
+    try
+    {
+        if (salary < 0)
+            throw salary;
+
+        cout << "Salary: " << salary;
+    }
+    catch (float x)
+    {
+        cout << "Error: Salary cannot be negative";
+    }
+
+    return 0;
+}
