@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int quantity;
+
+    cout << "Enter product quantity: ";
+    cin >> quantity;
+
+    try
+    {
+        if (quantity <= 0)
+            throw quantity;
+
+        cout << "Valid quantity: " << quantity;
+    }
+    catch (int x)
+    {
+        cout << "Exception: Quantity must be positive";
+    }
+
+    return 0;
+}
