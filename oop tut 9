@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+class Appliance
+{
+public:
+    virtual void operate()
+    {
+        cout << "Operating appliance" << endl;
+    }
+};
+
+class Fan : public Appliance
+{
+public:
+    void operate()
+    {
+        cout << "Fan is rotating" << endl;
+    }
+};
+
+class WashingMachine : public Appliance
+{
+public:
+    void operate()
+    {
+        cout << "Washing machine is washing clothes" << endl;
+    }
+};
+
+int main()
+{
+    Appliance *ptr;
+    Fan f;
+    WashingMachine w;
+
+    ptr = &f;
+    ptr->operate();
+
+    ptr = &w;
+    ptr->operate();
+
+    return 0;
+}
