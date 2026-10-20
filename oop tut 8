@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+class Basic
+{
+protected:
+    int age;
+    float salary;
+
+public:
+    void getBasic()
+    {
+        cout << "Enter age: ";
+        cin >> age;
+        cout << "Enter salary: ";
+        cin >> salary;
+    }
+};
+
+class Experience
+{
+protected:
+    int years;
+
+public:
+    void getExperience()
+    {
+        cout << "Enter experience in years: ";
+        cin >> years;
+    }
+};
+
+class Employee : public Basic, public Experience
+{
+public:
+    void check()
+    {
+        if (age >= 18 && years >= 2 && salary >= 15000)
+            cout << "Employee is eligible";
+        else
+            cout << "Employee is not eligible";
+    }
+};
+
+int main()
+{
+    Employee e;
+    e.getBasic();
+    e.getExperience();
+    e.check();
+
+    return 0;
+}
