@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class String
+{
+    string str;
+
+public:
+    String(string s)
+    {
+        str = s;
+    }
+
+    String(const String &s)
+    {
+        str = s.str;
+    }
+
+    void Display()
+    {
+        cout << "String: " << str << endl;
+    }
+};
+
+int main()
+{
+    String s1("Hello");
+    String s2(s1);
+
+    cout << "Original ";
+    s1.Display();
+
+    cout << "Copied ";
+    s2.Display();
+
+    return 0;
+}
