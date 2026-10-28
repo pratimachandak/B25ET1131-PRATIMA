@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+template <class T>
+class Sample
+{
+    T a, b;
+
+public:
+    Sample(T x, T y)
+    {
+        a = x;
+        b = y;
+    }
+
+    T add()
+    {
+        return a + b;
+    }
+};
+
+template <class T>
+T maximum(T a, T b)
+{
+    return (a > b) ? a : b;
+}
+
+int main()
+{
+    Sample<int> s(10, 20);
+    cout << "Sum = " << s.add() << endl;
+
+    cout << "Maximum = " << maximum(15, 25) << endl;
+
+    return 0;
+}
